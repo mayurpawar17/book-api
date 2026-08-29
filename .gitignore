@@ -1,41 +1,127 @@
-# Generated .gitignore file for: Python, Pip, VSCode
-# Created with FOSSA's DevOps Tools
-
+```gitignore
+# ============================================
 # Python
+# ============================================
+
+# Python cache
 __pycache__/
 *.py[cod]
 *$py.class
-.pytest_cache/
+
+# Python build / distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Coverage
 .coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# Type checking / linting caches
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# ============================================
+# Virtual Environment
+# ============================================
+
+.venv/
 venv/
 env/
+ENV/
+
+# ============================================
+# uv
+# ============================================
+
+# Keep uv.lock committed for application/backend projects.
+# Do NOT ignore uv.lock.
+
+# ============================================
+# Environment / Secrets
+# ============================================
+
 .env
-*.so
+.env.*
+!.env.example
 
-# Pip
-# Add Pip-specific ignores here
+# ============================================
+# PyCharm
+# ============================================
 
-# VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.idea/
 
-# Common
-.DS_Store
+# ============================================
+# VS Code
+# ============================================
+
+.vscode/
+
+# ============================================
+# OS Generated Files
+# ============================================
+
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ============================================
+# Logs
+# ============================================
+
 *.log
-*.bak
+logs/
+
+# ============================================
+# Temporary Files
+# ============================================
+
 *.tmp
+*.temp
 *.swp
+*.swo
 *~
 
-# IDE and editor generated files
-.idea/
-*.sublime-*
+# ============================================
+# Local Database
+# ============================================
 
-# Local environment files
-.env
-.env.local
-.env.*.local
+# SQLite database files
+*.sqlite
+*.sqlite3
+*.db
+
+# ============================================
+# FastAPI / Local Development
+# ============================================
+
+# Local uploads
+uploads/
+
+# Generated files
+generated/
+
+# ============================================
+# Docker
+# ============================================
+
+# Docker override files
+docker-compose.override.yml
+
+# ============================================
+# IDE / Editor Files
+# ============================================
+
+*.iml
+```
