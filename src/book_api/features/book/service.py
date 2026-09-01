@@ -1,0 +1,1 @@
+# Business logic (search, inventory check)
