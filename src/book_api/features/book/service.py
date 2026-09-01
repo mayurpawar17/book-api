@@ -3,6 +3,7 @@ from datetime import datetime
 from fastapi import HTTPException, status
 from .schemas import BookCreate, BookResponse
 from .models import BookRecord
+from book_api.core.exceptions import ResourceNotFoundException, InvalidOperationException
 
 # In-memory storage for books (acts as a mock database)
 books_db: list[dict] = []
@@ -14,6 +15,10 @@ class BookService:
 
     def create_book(self, bookCreate: BookCreate):
         """Create a new book and add it to the in-memory database"""
+        if bookCreate.price <= 0:
+            raise InvalidOperationException("Book price must be greater than zero.")
+
+        
         global _id_counter
         
         # Create a new book record with an auto-incremented ID and current timestamp
